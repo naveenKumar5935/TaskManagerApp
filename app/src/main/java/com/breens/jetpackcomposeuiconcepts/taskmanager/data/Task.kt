@@ -3,7 +3,7 @@ package com.breens.jetpackcomposeuiconcepts.taskmanager.data
 data class Task(
     val id: Int,
     val title: String,
-    val body: String? = null,
+    val body: String,
     val startTime: String,
     val endTime: String
 )
