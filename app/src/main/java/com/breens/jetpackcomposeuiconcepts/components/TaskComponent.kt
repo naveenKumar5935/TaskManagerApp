@@ -3,6 +3,7 @@ package com.breens.jetpackcomposeuiconcepts.components
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -34,7 +35,7 @@ import com.breens.jetpackcomposeuiconcepts.ui.theme.LightGreen
 import com.breens.jetpackcomposeuiconcepts.ui.theme.LightPurple
 
 @Composable
-fun TaskComponent(task: Task) {
+fun TaskComponent(task: Task, gotoSecondScreen:(Task)->Unit) {
     val taskColor = listOf(LightBlue, LightPurple, LightGreen).random()
     Row(modifier = Modifier
         .fillMaxWidth(),
@@ -63,7 +64,8 @@ fun TaskComponent(task: Task) {
 
             Card(
                 shape = RoundedCornerShape(8.dp),
-                modifier = Modifier.padding(10.dp,10.dp,0.dp,10.dp),
+                modifier = Modifier.padding(10.dp,10.dp,0.dp,10.dp)
+                    .clickable { gotoSecondScreen(task) },
                 backgroundColor = taskColor
             ) {
                 Column(
