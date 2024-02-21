@@ -98,7 +98,7 @@ fun App(gotoSecondScreen:(task : Task)->Unit) {
     ) {
         LazyColumn(modifier = Modifier
             .padding(20.dp)
-            .fillMaxHeight(.8f)) {
+            .fillMaxHeight(.9f)) {
             item {
                 ProfileHeaderComponent()
                 Spacer(modifier = Modifier.height(20.dp))
